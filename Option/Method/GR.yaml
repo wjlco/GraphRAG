@@ -5,7 +5,12 @@ use_relations_vdb: True  # Only set True for LightRAG, ToG and GR
 llm_model_max_token_size: 32768
 use_entity_link_chunk: False  # Only set True for HippoRAG and FastGraphRAG
 enable_graph_augmentation: False
-
+#llm
+llm:
+  api_type: "open_llm"  # Options: "openai" or "open_llm" (For Ollama and LlamaFactory) 
+  model: "llama3:8b"
+  base_url: "http://localhost:11434/v1"  # Change this for local models
+  api_key: "ollama"  # Not required for local models
 # Data
 index_name: er_graph
 vdb_type: vector  # vector/colbert
